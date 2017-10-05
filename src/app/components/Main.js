@@ -7,7 +7,7 @@ class Main extends React.Component {
 	render() {
 		return (
 			<div className={"TR-Main"}>
-				Main Area
+				Main Area <span className={"TR-Icon"}>&#xf0f9;</span>
 			</div>
 		)
 	}

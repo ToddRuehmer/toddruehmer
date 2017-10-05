@@ -1,5 +1,0 @@
-.location { display: inline-block; font-size: 3rem; 
-	@include breakpoint(large) { font-size: 6rem; }
-}
-
-.temperature { color: $warmYellow; font-weight: bold; margin-left: .5em; @extend .location; }

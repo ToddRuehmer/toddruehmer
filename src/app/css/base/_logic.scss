@@ -1,0 +1,143 @@
+﻿//Mixins
+@mixin AlignItems($arguments) {
+    align-items: $arguments;
+    -webkit-align-items: $arguments;
+}
+@mixin JustifyContent($arguments) {
+    justify-content: $arguments;
+}
+@mixin FlexDirection($arguments) {
+    flex-direction: $arguments;
+}
+@mixin FlexWrap($arguments) {
+    flex-wrap: $arguments;
+}
+@mixin FlexBox($justify:space-between,$alignItems:stretch,$direction:row,$wrap:nowrap) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @include AlignItems($justify);
+    @include AlignItems($alignItems);
+    @include FlexDirection($direction);
+    @include FlexWrap($wrap);
+}
+@mixin Flex($arguments) {
+	flex: $arguments;
+	-webkit-flex: 0 0 $arguments;
+	-ms-flex: 0 0 $arguments;
+	@if $arguments == 1 {
+		-ms-flex: 1;
+	}
+}
+@mixin FlexBasis($arguments) {
+	flex-basis: $arguments;
+	-webkit-flex-basis: $arguments;
+	-ms-flex: 0 0 $arguments;
+	@if $arguments == "100%" {
+		-ms-flex: 0 0 auto;
+	}
+}
+@mixin FlexGrow($arguments) {
+	flex-grow: $arguments;
+	-webkit-flex-grow: 0 0 $arguments;
+}
+	 
+@mixin Transform($arguments) {
+	@if $arguments == "none" {
+		-ms-transform: none;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-o-transform: none;
+		transform: none;
+	}
+	-ms-transform: $arguments;
+	-moz-transform: $arguments;
+	-webkit-transform: $arguments;
+	-o-transform: $arguments;
+	transform: $arguments;
+}
+@mixin TransformOrigin($arguments: center center) {
+    -ms-transform-origin: $arguments;
+    -webkit-transform-origin: $arguments;
+    transform-origin: $arguments;
+}
+	 
+@mixin Transition($properties:all,$timing:.2s) {
+    -webkit-transition: $properties $timing;
+    transition: $properties $timing;
+}
+	 
+@mixin BoxSizing($arguments:border-box) {
+    -moz-box-sizing: $arguments;
+    -webkit-box-sizing: $arguments;
+    box-sizing: $arguments;
+}
+
+@mixin Delay($Timing){
+	-webkit-transition-delay: $Timing;
+	transition-delay: $Timing;
+	-webkit-animation-delay: $Timing;
+	animation-delay: $Timing;
+}
+
+@mixin Perspective($arguments: 600px, $origin: 50% 50%) {
+	-webkit-perspective: $arguments;
+	-ms-perspective: $arguments;
+	perspective: $arguments;
+
+    -webkit-perspective-origin: $origin;
+    perspective-origin: $origin;
+}
+
+@mixin Keyframes($name, $content) {
+	@-moz-keyframes #{$name} { @content; }
+	@-webkit-keyframes #{$name} { @content; }
+	@keyframes #{$name} { @content; }
+}
+
+@mixin ClipPath($arguments) {
+    -webkit-clip-path: $arguments;
+    -ms-clip-path: $arguments;
+    clip-path: $arguments;
+}
+
+@mixin ColumnCount($count) {
+	-webkit-column-count: $count;
+    -moz-column-count: $count;
+    column-count: $count;
+}
+	
+@mixin ClearFix() {
+	* html & {
+		height: 1%;
+		overflow: visible;
+	}
+	*+html & {
+		min-height: 1%;
+	}
+	&:after {
+		content: "";
+		display: block;
+		height: 0 !important;
+		overflow: hidden;
+		position: static !important;
+		clear: both;
+	}
+}
+
+@mixin Button($bg:$Accent, $border:#fff, $text:#fff) {    
+    background: $bg;
+    border: 3px solid $border;
+    border-radius: .75rem;
+    box-shadow: 0 0 10px rgba($DarkGrey, .5);
+    color: $text;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.65rem 1rem 0.6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include Transition(all, .2s);
+    &:hover { border-color: $LightBlue; color: $text; }
+}

@@ -1,22 +1,17 @@
-//Vars
-@import "colors";
+﻿//Foundation
+@import 'base/foundation';
 
-@import "../../../node_modules/foundation-sites/scss/foundation";
+//Variables
+@import 'base/variables';
 
-@include foundation-global-styles;
+//Logic
+@import 'base/logic';
 
-@include foundation-typography;
-@include foundation-xy-grid-classes;
-@include foundation-button;
-@include foundation-menu;
-@include foundation-top-bar;
-@include foundation-media-object;
+//Base
+@import 'base/base';
 
-//Theme
-@import "theme";
+//Common Classes
+@import 'base/common';
 
-//Layout
-@import "layout";
-
-//Weather
-@import "weather";
+//Skeleton
+@import 'base/skeleton';

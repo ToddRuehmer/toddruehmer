@@ -1,0 +1,19 @@
+﻿//Skeleton
+body { background: $Blue; }
+
+.TR-Constraint { min-height: 100%; padding-left: 6vw; padding-right: 6vw; @include grid-row;
+    & & { padding-left: 0; padding-right: 0; }
+    
+    @include breakpoint(small) { 
+        max-width: rem-calc(map-get($breakpoints, small)) - 2rem !important;
+    }
+    @include breakpoint(large) { 
+        max-width: rem-calc(map-get($breakpoints, large)) - 2rem !important;
+    }
+    @include breakpoint(xlarge) { 
+        max-width: rem-calc(map-get($breakpoints, xlarge)) - 2rem !important;
+    }
+    @include breakpoint(xxlarge) { 
+        max-width: rem-calc(map-get($breakpoints, xxlarge)) - 2rem !important;
+    }
+}
