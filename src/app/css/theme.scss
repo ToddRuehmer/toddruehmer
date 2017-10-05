@@ -1,0 +1,5 @@
+@mixin themeColors($textColor: $textDefault, $bgColor: $chalk) { background: $bgColor; color: $textColor; }
+
+.RE-ThemeLight { @include themeColors(); }
+
+.RE-ThemeDark { @include themeColors($textColor: $chalk, $bgColor: $midnight); }
