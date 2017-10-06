@@ -1,5 +1,5 @@
 ﻿//Fonts
-$fa-font-path: "/node_modules/font-awesome/fonts";
+$fa-font-path: "/dist/app/fonts";
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
 
 //Toolbox
@@ -70,6 +70,7 @@ em {
 }
 h1 {
     color: $BasicHeadingColor;
+    font-family: $Heading1FontStack;
     font-size: 2em;
     font-weight: bold;
     line-height: 1.2em;

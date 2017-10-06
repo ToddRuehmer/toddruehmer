@@ -9,3 +9,7 @@ import Main from "./components/Main";
 render(
 	<Main />, 
 	window.document.getElementById('TR-Container'));
+	
+//Typekit
+import kepler from "./typekit/kepler";
+kepler();
