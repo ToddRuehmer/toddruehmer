@@ -5,12 +5,14 @@ $bp-xlarge: 1200px;
 $bp-xxlarge: 1440px;
 
 //Fonts
-$BasicFontStack:'Montserrat', sans-serif;
-$Heading1FontStack:'kepler-std-semicondensed-dis', serif;
+$KeplerFont: 'kepler-std-semicondensed-dis', serif;
+
+$BasicFontStack: $KeplerFont;
+$Heading1FontStack: $KeplerFont;
 
 //Colors
 $Yellow: #ffd200;
-$DarkGrey: #4d4d4d;
+$DarkGrey: #212121;
 $MediumGrey: #ccc;
 $NearWhite: #ddd;
 $Red: #f00;

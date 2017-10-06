@@ -1,0 +1,8 @@
+@import '../base/logic';
+@import '../base/variables';
+
+.TR-Loader { background: $NearWhite; bottom: 0; left: 0; position: absolute; right: 0; top: 0;
+	&Progress { background: $DarkGrey; bottom: 0; left: 0; position: absolute; top: 0; width: 0%; @include Transition(width, .2s); 
+		&_Done { left: auto; right: 0; width: 66.666666% !important; }
+	}
+}

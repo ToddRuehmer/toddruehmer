@@ -10,7 +10,9 @@ class Main extends React.Component {
 		return (
 			<section className={"TR-Summary"}>
 				<div className={"TR-SummaryInner"}>
-					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth.</p>
+					<p>Todd Ruehmer is a UI Developer/Designer proudly based in Milwaukee.</p>
+					<p>Focused on front end development serving as dot-connector between design and back end.</p>
+					<p><a href="#">View Resume <span className="TR-Icon">&#xf178;</span></a></p>
 				</div>
 			</section>
 		)

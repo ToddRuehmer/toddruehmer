@@ -2,6 +2,8 @@ import React from "react";
 
 import "../css/components/_title.scss";
 
+import Portrait from "./Portrait";
+
 class Main extends React.Component {
 	constructor(props) {
 		super();
@@ -9,9 +11,7 @@ class Main extends React.Component {
 	render() {
 		return (
 			<section className={"TR-Title"}>
-				<section id="TR-Portrait">
-					<img src={require("../images/img-portrait.png")} />
-				</section>
+				<Portrait />
 				<div className={"TR-TitleInner"}>
 					<h1>Meet<br /> Todd</h1>
 				</div>

@@ -1,0 +1,6 @@
+@import '../base/logic';
+
+#TR-Portrait { height: 100%; opacity: .1; position: absolute; width: 100%; 
+	canvas { min-height: 100%; left: 50%; min-width: 100%; position: absolute; top: 50%; @include Transform(translate(-50%,-50%)); }
+	img { max-width: none; min-height: 100%; left: 50%; min-width: 100%; position: absolute; top: 50%; @include Transform(translate(-50%,-50%)); }
+}

@@ -17,7 +17,7 @@ import "./typekit/kepler";
 import "./plugins/breathing-halftone.pkgd.js";
 new BreathingHalftone(document.querySelector('#TR-Portrait img'), {
 	oscPeriod: 10,
-	dotSize: 1/200,
+	dotSize: 1/100,
 	friction: 1,
 	isRadial: true
 });

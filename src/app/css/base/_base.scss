@@ -46,11 +46,12 @@ html {
 
 body {
     color: $BasicTextColor;
-    font: 16px/26px $BasicFontStack;
+    font: 1rem/1.6em $BasicFontStack;
     overflow-x: hidden;
 }
 a {
     color: $Accent;
+    text-decoration: none;
     &:hover {
         color: lighten($Accent, 15%);
     }
@@ -332,7 +333,7 @@ legend {
 
 @include breakpoint(medium) { 
     body {
-        font: 1.1rem/1.4em $BasicFontStack;
+        font: 2rem/2rem $BasicFontStack;
     }
     h1 {
         font-size: 2.2rem;
