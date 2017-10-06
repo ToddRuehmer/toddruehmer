@@ -18,7 +18,7 @@
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    @include AlignItems($justify);
+    @include JustifyContent($justify);
     @include AlignItems($alignItems);
     @include FlexDirection($direction);
     @include FlexWrap($wrap);
@@ -131,7 +131,7 @@
     background: $bg;
     border: 3px solid $border;
     border-radius: .75rem;
-    box-shadow: 0 0 10px rgba($DarkGrey, .5);
+    box-shadow: 0 0 10px rgba($MediumGrey, .5);
     color: $text;
     display: inline-block;
     font-weight: bold;
@@ -139,5 +139,5 @@
     text-decoration: none;
     text-transform: uppercase;
     @include Transition(all, .2s);
-    &:hover { border-color: $LightBlue; color: $text; }
+    &:hover { border-color: $Accent; color: $text; }
 }

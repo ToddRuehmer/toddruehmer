@@ -1,0 +1,9 @@
+@import '../base/logic';
+
+.TR-Title { text-align: right; @include Flex(1); @include FlexBox($direction:column,$justify:center,$alignItems:flex-end);
+	
+	&Inner { padding: 3rem 3rem 3rem 6rem; }
+	h1 { font-size: 12vw; line-height: .8em; margin: .5em 0; }
+}
+
+#TR-Portrait { /*left: 50%; position: absolute; top: 50%; width: 110%; @include Transform(translate(-50%,-50%));*/ }

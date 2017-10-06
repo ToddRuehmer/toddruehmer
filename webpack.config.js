@@ -39,7 +39,11 @@ var config = {
         		    publicPath: '../'       // override the default path
         		  }
         		}]
-       		}	
+       		},
+            {
+				test: /\.(png|jpg)$/,
+				loader: 'url-loader?limit=25000'
+    		}
         ]
     }
 };

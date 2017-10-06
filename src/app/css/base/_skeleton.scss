@@ -1,7 +1,10 @@
 ﻿//Skeleton
-body { background: $Blue; }
+html { height: 100%; }
+body { background: $NearWhite; height: 100%; }
 
-.TR-Constraint { min-height: 100%; padding-left: 6vw; padding-right: 6vw; @include grid-row;
+.TR-Container { height: 100%; }
+
+.TR-Constraint { padding-left: 6vw; padding-right: 6vw; @include grid-row;
     & & { padding-left: 0; padding-right: 0; }
     
     @include breakpoint(small) { 

@@ -9,19 +9,14 @@ $BasicFontStack:'Montserrat', sans-serif;
 $Heading1FontStack:'kepler-std-semicondensed-dis', serif;
 
 //Colors
-$Blue: #043f8d;
-$LightBlue: #00abd3;
-$FaintBlue: #e3e9f2;
-$Yellow: #fec949;
-$Grey: #3d3e43;
-$DarkGrey: #999;
+$Yellow: #ffd200;
+$DarkGrey: #4d4d4d;
 $MediumGrey: #ccc;
-$LightGrey: #f2f2f2;
-$NearWhite: #f1f4f8;
+$NearWhite: #ddd;
 $Red: #f00;
 
 $BasicTextColor: #000;
 $BasicHeadingColor: #333;
-$Accent: $Blue;
+$Accent: $Yellow;
 $LightAccent: lighten($Accent, 10%);
 $Warning: $Red;

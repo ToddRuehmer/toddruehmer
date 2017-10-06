@@ -11,5 +11,8 @@ render(
 	window.document.getElementById('TR-Container'));
 	
 //Typekit
-import kepler from "./typekit/kepler";
-kepler();
+import "./typekit/kepler";
+	
+//Breathing Halftone
+import "./plugins/breathing-halftone.pkgd.js";
+new BreathingHalftone(document.querySelector('#TR-Portrait'), {});

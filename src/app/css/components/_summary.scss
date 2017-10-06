@@ -1,0 +1,6 @@
+@import '../base/logic';
+@import '../base/variables';
+
+.TR-Summary { background: $DarkGrey; color: $NearWhite; @include Flex(2); @include FlexBox($direction:column,$justify:center,$alignItems:flex-end); 
+	&Inner { padding: 3rem 6rem 3rem 3rem; }
+}
