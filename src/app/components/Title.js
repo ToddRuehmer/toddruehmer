@@ -9,7 +9,9 @@ class Main extends React.Component {
 	render() {
 		return (
 			<section className={"TR-Title"}>
-				<img src={require("../images/img-portrait.png")} id="TR-Portrait" />
+				<section id="TR-Portrait">
+					<img src={require("../images/img-portrait.png")} />
+				</section>
 				<div className={"TR-TitleInner"}>
 					<h1>Meet<br /> Todd</h1>
 				</div>
