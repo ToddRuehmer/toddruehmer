@@ -9,7 +9,7 @@ class Portrait extends React.Component {
 	render() {
 		return (
 			<section id="TR-Portrait">
-				<img src={require("../images/img-portrait.png")} />
+				<img src={require("../images/img-portrait-2.jpg")} />
 			</section>
 		)
 	}

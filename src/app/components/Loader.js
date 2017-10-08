@@ -23,12 +23,11 @@ class Loader extends React.Component {
 		}, function() { this.onHaveAssets() });
 	}
 	
-	onHaveAssets() {console.log(this.state.images);
+	onHaveAssets() {
 		var self = this;
 		
 		for(var i=0;i<this.state.images.length;i++) {
 			this.state.images[0].addEventListener('load', function() {
-				console.log("loaded");
 				self.state.loadedCount++;
 				self.setState({ progressPercent: self.state.loadedCount / self.state.images.length * 100 });
 				self.setState({

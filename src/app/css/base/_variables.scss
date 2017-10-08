@@ -12,6 +12,7 @@ $Heading1FontStack: $KeplerFont;
 
 //Colors
 $Yellow: #ffd200;
+$RedOrange: #ff5700;
 $DarkGrey: #212121;
 $MediumGrey: #ccc;
 $NearWhite: #ddd;
@@ -19,6 +20,6 @@ $Red: #f00;
 
 $BasicTextColor: #000;
 $BasicHeadingColor: #333;
-$Accent: $Yellow;
+$Accent: $RedOrange;
 $LightAccent: lighten($Accent, 10%);
 $Warning: $Red;

@@ -1,0 +1,19 @@
+@import '../base/logic';
+@import '../base/variables';
+
+.TR-Resume { height: 90%; left: 50%; position: absolute; top: 50%; width: 90%; @include Transform(translate(-50%,-50%)); @include Perspective(1000);
+	&:before { background: #fff; border-radius: 1rem 0 0 1rem; bottom: 0; content: ""; left: 0; position: absolute; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(right center); @include Transition($timing:.5s); }
+	&:after { background: #fff; border-radius: 0 1rem 1rem 0; bottom: 0; content: ""; position: absolute; right: 0; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(left center); @include Transition($timing:.5s); }
+	
+	&_Closed { 
+		&:before { @include Transform(rotateY(90deg)); }
+		&:after { @include Transform(rotateY(-90deg)); }
+	}
+	
+	&Inner { position: relative; z-index: 1; }
+	&Header { border-bottom: 1px solid $NearWhite; @include FlexBox; 
+		h2 { margin: 0; padding: 1rem; }
+	}
+	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: bold; padding: 1rem; }
+	&Content { padding: 2rem; }
+}

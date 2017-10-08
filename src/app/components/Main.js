@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import "../css/components/_main.scss";
 
@@ -6,6 +7,7 @@ import "../css/components/_main.scss";
 import Title from "./Title";
 import Summary from "./Summary";
 import Loader from "./Loader";
+import Resume from "./Resume";
 
 class Main extends React.Component {
 	constructor(props) {
@@ -13,11 +15,16 @@ class Main extends React.Component {
 	}
 	render() {
 		return (
-			<div className={"TR-Main"}>
-				<Title />
-				<Summary />
-				<Loader />
-			</div>
+			<Router>
+				<div className={"TR-Main"}>
+					<Title />
+					<Summary />
+					<Loader />
+					<Switch>
+						<Route component={Resume} path={"/Resume"} />
+					</Switch>
+				</div>
+			</Router>
 		)
 	}
 }
