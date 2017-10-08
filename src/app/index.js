@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route, NavLink, Switch, browserHistory, IndexR
 //Module
 import Main from "./components/Main";
 
+//Chaining
+import "./utility/chaining"
+
 render(
 	<Main />, 
 	window.document.getElementById('TR-Container'));

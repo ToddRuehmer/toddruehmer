@@ -8,7 +8,8 @@ class Resume extends React.Component {
 		super();
 		this.state = {
 			reveal: false,
-			closedClass: ""
+			closedClass: "",
+			collapsedClass: ""
 		};
 
 		if(typeof props.location.state !== "undefined") {
@@ -16,23 +17,53 @@ class Resume extends React.Component {
 		}
 	}
 	
+	hide() {
+		this.collapseContent();
+		this.foldUp();
+	}
+	
 	close(e) {
-		e.preventDefault();
-		console.log(e);
+		if (e) { e.preventDefault(); }
+		
+		Promise.delay(this.collapseContent.bind(this), 1).delay(this.foldUp.bind(this), 200).delay(this.goBack.bind(this), 500);
+	}
+	
+	open(e) {
+		if (e) { e.preventDefault(); }
+		
+		Promise.delay(this.unFold.bind(this), 1).delay(this.expandContent.bind(this), 500)
+	}
+	
+	goBack() {
 		this.props.history.goBack();
+	}
+	
+	foldUp() {
+		this.setState({ closedClass: "TR-Resume_Closed" });
+	}
+	
+	unFold() {
+		this.setState({ closedClass: "" });
+	}
+	
+	collapseContent() {
+		this.setState({ collapsedClass: "TR-ResumeInner_Collapsed" });
+	}
+	
+	expandContent() {
+		this.setState({ collapsedClass: "" });
 	}
 	
 	componentWillMount() {
 		if(this.state.reveal) {
-			console.log("work");
-			this.setState({ closedClass: "TR-Resume_Closed" })
+			this.hide();
 		}
 	}
 	
 	render() {
 		return (
 			<section className={"TR-Resume " + this.state.closedClass} ref="resume">
-				<div className={"TR-ResumeInner"}>
+				<div className={"TR-ResumeInner " + this.state.collapsedClass}>
 					<header className="TR-ResumeHeader">
 						<h2>Resumé</h2>
 						<Link to="/" className="TR-ResumeClose" onClick={this.close.bind(this)}>&times;</Link>
@@ -47,7 +78,7 @@ class Resume extends React.Component {
 	
 	componentDidMount() {
 		var self = this;
-		setTimeout( function(){ self.setState({ closedClass: "" }), 10});
+		this.open();
 	}
 }
 
