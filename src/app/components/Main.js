@@ -7,7 +7,7 @@ import "../css/components/_main.scss";
 import Title from "./Title";
 import Summary from "./Summary";
 import Loader from "./Loader";
-import Resume from "./Resume";
+import Resume from "./resume/Resume";
 
 class Main extends React.Component {
 	constructor(props) {

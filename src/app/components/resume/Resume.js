@@ -1,7 +1,14 @@
 import React from "react";
+import { Provider, connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import $ from 'jquery';
 
-import "../css/components/_resume.scss";
+import Tabs from "./Tabs";
+import Sections from "./Sections";
+
+import { getResume } from "../../actions/resumeActions";
+
+import "../../css/components/resume/_resume.scss";
 
 class Resume extends React.Component {
 	constructor(props) {
@@ -11,6 +18,7 @@ class Resume extends React.Component {
 			closedClass: "",
 			collapsedClass: ""
 		};
+		props.getResume();
 
 		if(typeof props.location.state !== "undefined") {
 			this.state.reveal = props.location.state.reveal	
@@ -54,6 +62,10 @@ class Resume extends React.Component {
 		this.setState({ collapsedClass: "" });
 	}
 	
+	revealContent() {
+		//this.setState({ closedClass: "" });
+	}
+	
 	componentWillMount() {
 		if(this.state.reveal) {
 			this.hide();
@@ -63,13 +75,18 @@ class Resume extends React.Component {
 	render() {
 		return (
 			<section className={"TR-Resume " + this.state.closedClass} ref="resume">
-				<div className={"TR-ResumeInner " + this.state.collapsedClass}>
+				<div className={"TR-ResumeInner " + this.state.collapsedClass} ref="resumeInner">
 					<header className="TR-ResumeHeader">
 						<h2>Resumé</h2>
 						<Link to="/" className="TR-ResumeClose" onClick={this.close.bind(this)}>&times;</Link>
 					</header>
 					<section className="TR-ResumeContent">
-					
+						<header className="TR-ResumeTabs">
+							<Tabs tabs={this.props.resume.resume} />
+						</header>
+						<section className="TR-ResumeSection">
+							<Sections tabs={this.props.resume.resume} />
+						</section>
 					</section>
 				</div>
 			</section>
@@ -77,7 +94,13 @@ class Resume extends React.Component {
 	}
 	
 	componentDidMount() {
-		var self = this;
+		$('.TR-ResumeInner').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd', function(e) {
+			let el = this;
+			if(getComputedStyle(el).opacity == 1) {
+				
+			}
+		});
+		
 		this.open();
 	}
 }
@@ -86,4 +109,18 @@ Resume.contextTypes = {
   router: React.PropTypes.object
 };
 
-export default Resume;
+const mapStateToProps = (state) => {
+	return {
+		resume: state.resume
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getResume: () => {
+			dispatch(getResume())
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Resume);

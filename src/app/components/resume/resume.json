@@ -1,0 +1,70 @@
+{
+	"resume": [
+		{
+			"name": "Summary",
+			"tab": "Summary",
+			"content": "<p>Experienced Front-End Developer with strong sense of detail and wide range of disciplines that bridge concept and construction of web-based environments.Seeking a professional and prolific team of co-workers to share knowledge with, and to enrich skill set as a senior-level worker.</p><h2>Strengths Include</h2><ul><li>Passion for web standards</li><li>Unique and effective web design</li><li>Stays current with new technologies</li><li>Seeks out better ways to achieve goals</li><li>Ability to understand unique objectives</li></ul>"
+		}, 
+		{
+			"name": "Skills",
+			"tab": "Skills",
+			"content": "<p>HTML5, CSS 3, JavaScript(ES6 via Typescript), jQuery, AngularJS, Mobile-First Responsive Web Design, Canvas, SVG, raphael.js</p><p>ASP .Net MVC, PHP, SVN, Coda 2, TFS, Git, Mercurial</p><p>Sitecore, Umbraco, Drupal, Wordpress</p><p>Adobe Photoshop, Illustrator, InDesign, After Effects, Blender</p>"
+		}, 
+		{
+			"name": "Experience",
+			"tab": "Experience",
+			"content": [
+				{
+					"company": "Layer One Media, Milwaukee, WI",
+					"position": "Front-End Developer, October 2015 - Present",
+					"summary": "<p>Spearheading front end initiatives with .Net-focused team working on marketing and information-heavy material using Sitecore and Umbraco. Built variety of Javascript applications including product configurator and e-commerce UI.</p>",
+					"projects": [
+						{
+							"title": "mgic.com",
+							"link": "http://www.mgic.com"
+						},
+						{
+							"title": "dataweigh.com",
+							"link": "http://www.dataweigh.com"
+						}
+					]
+				},
+				{
+					"company": "BVK, Milwaukee, WI",
+					"position": "Front-End Developer, June 2014 - October 2015",
+					"summary": "<p>Developed presentation-heavy campaigns for large national clients. Tasks included front-end and back-end development with extremely minimal art direction. Was involved in conception and planning stages all the way up to launch. Worked in tandem with art directors to optimize experiences.</p>",
+					"projects": [
+						{
+							"title": "mainequarterly.com/thoreau",
+							"link": "http://www.mainequarterly.com/thoreau"
+						},
+						{
+							"title": "mainequarterly.com/food",
+							"link": "http://www.mainequarterly.com/food"
+						}
+					]
+				},
+				{
+					"company": "Lightburn, Milwaukee, WI",
+					"position": "Interactive Designer/Developer, October 2011 - June 2014",
+					"summary": "<p>Designed and Developed interactive projects for desktop and mobile web. Worked with .Net developers to plan out interfaces that combine technology and design. Worked almost exclusively with proprietary CMS developed by Lightburn.</p>",
+					"projects": [
+						{
+							"title": "lynchtruckcenter.com",
+							"link": "http://www.lynchtruckcenter.com"
+						},
+						{
+							"title": "wimmercommunities.com",
+							"link": "http://www.wimmercommunities.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Skills",
+			"tab": "Skills",
+			"content": "<p>Bachelor’s Degree<br />University of Wisconsin - Milwaukee<br />Inter-Arts (DIVAS)<br />Cumulative GPA — 3.3<br />2004-2008</p><p>Associate’s Degree<br />University of Wisconsin - Waukesha<br />Arts and Sciences<br />2002 - 2004</p>"
+		}
+	]
+}

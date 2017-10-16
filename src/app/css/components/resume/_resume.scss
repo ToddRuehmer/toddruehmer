@@ -1,7 +1,7 @@
-@import '../base/logic';
-@import '../base/variables';
+@import '../../base/logic';
+@import '../../base/variables';
 
-.TR-Resume { height: 90%; left: 50%; position: absolute; top: 50%; width: 90%; @include Transform(translate(-50%,-50%)); @include Perspective(4000px);
+.TR-Resume { height: calc(100vh - 50px); left: 50%; position: absolute; top: 50%; width: calc(100vw - 50px); @include Transform(translate(-50%,-50%)); @include Perspective(4000px);
 	&:before { background: #fff; border-radius: 1rem 0 0 1rem; bottom: 0; content: ""; left: 0; position: absolute; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(right center); @include Transition($timing:.5s); }
 	&:after { background: #fff; border-radius: 0 1rem 1rem 0; bottom: 0; content: ""; position: absolute; right: 0; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(left center); @include Transition($timing:.5s); }
 	
@@ -14,7 +14,7 @@
 		&_Collapsed { opacity: 0; }
 	}
 	&Header { border-bottom: 1px solid $NearWhite; @include FlexBox; 
-		h2 { margin: 0; padding: 1rem; }
+		h2 { margin: 0; padding: 1rem 2rem; }
 	}
 	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: 	bold; padding: 1rem; }
 	&Content { padding: 2rem; }

@@ -2,15 +2,21 @@
 import React from "react";
 import {render} from "react-dom";
 import { BrowserRouter as Router, Route, NavLink, Switch, browserHistory, IndexRoute } from 'react-router-dom';
+import {Provider} from "react-redux";
 
-//Module
+//Modules
 import Main from "./components/Main";
+
+//Store Import
+import store from "./Store";
 
 //Chaining
 import "./utility/chaining"
 
 render(
-	<Main />, 
+	<Provider store={store}>
+		<Main />
+	</Provider>, 
 	window.document.getElementById('TR-Container'));
 	
 //Typekit
