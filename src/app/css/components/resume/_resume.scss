@@ -10,12 +10,13 @@
 		&:after { @include Transform(rotateY(-90deg)); }
 	}
 	
-	&Inner { opacity: 1; position: relative; z-index: 1; @include Transition($timing:.2s);
+	&Inner { height: 100%; opacity: 1; position: relative; z-index: 1; @include Transition($timing:.2s); @include FlexBox($direction:column);
 		&_Collapsed { opacity: 0; }
 	}
-	&Header { border-bottom: 1px solid $NearWhite; @include FlexBox; 
+	&Header { border-bottom: 1px solid $NearWhite; flex-shrink: 0; @include FlexBox; 
 		h2 { margin: 0; padding: 1rem 2rem; }
 	}
-	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: 	bold; padding: 1rem; }
-	&Content { padding: 2rem; }
+	&Tabs { }
+	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: bold; padding: 1rem; }
+	&Content { overflow: auto; padding: 2rem; }
 }

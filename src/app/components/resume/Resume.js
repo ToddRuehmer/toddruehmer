@@ -82,7 +82,7 @@ class Resume extends React.Component {
 					</header>
 					<section className="TR-ResumeContent">
 						<header className="TR-ResumeTabs">
-							<Tabs tabs={this.props.resume.resume} />
+							<Tabs resume={this.props.resume.resume} />
 						</header>
 						<section className="TR-ResumeSection">
 							<Sections tabs={this.props.resume.resume} />
