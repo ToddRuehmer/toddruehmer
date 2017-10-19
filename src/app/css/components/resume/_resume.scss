@@ -16,7 +16,9 @@
 	&Header { border-bottom: 1px solid $NearWhite; flex-shrink: 0; @include FlexBox; 
 		h2 { margin: 0; padding: 1rem 2rem; }
 	}
-	&Tabs { }
+	&Tabs { text-align: center; 
+		a { display: inline-block; margin: 0 .5rem; padding: .5em; }
+	}
 	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: bold; padding: 1rem; }
 	&Content { overflow: auto; padding: 2rem; }
 }

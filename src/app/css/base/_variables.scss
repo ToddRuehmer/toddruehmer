@@ -6,9 +6,11 @@ $bp-xxlarge: 1440px;
 
 //Fonts
 $KeplerFont: 'kepler-std-semicondensed-dis', serif;
+$NowayFont: 'Noway', sans-serif;
 
-$BasicFontStack: $KeplerFont;
+$BasicFontStack: $NowayFont;
 $Heading1FontStack: $KeplerFont;
+$Heading2FontStack: $KeplerFont;
 
 //Colors
 $Yellow: #ffd200;
