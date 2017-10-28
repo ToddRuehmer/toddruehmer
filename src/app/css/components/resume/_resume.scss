@@ -1,9 +1,16 @@
+//Foundation
+@import '../../../../../node_modules/foundation-sites/scss/foundation';
+@import '../../../../../node_modules/foundation-sites/scss/util/_breakpoint.scss';
+
 @import '../../base/logic';
 @import '../../base/variables';
+@import '../../base/variables';
 
-.TR-Resume { height: calc(100vh - 50px); left: 50%; position: absolute; top: 50%; width: calc(100vw - 50px); @include Transform(translate(-50%,-50%)); @include Perspective(4000px);
+.TR-Resume { height: calc(100vh - .5rem); left: 50%; position: absolute; top: 50%; width: calc(100vw - .5rem); @include Transform(translate(-50%,-50%)); @include Perspective(4000px);
 	&:before { background: #fff; border-radius: 1rem 0 0 1rem; bottom: 0; content: ""; left: 0; position: absolute; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(right center); @include Transition($timing:.5s); }
 	&:after { background: #fff; border-radius: 0 1rem 1rem 0; bottom: 0; content: ""; position: absolute; right: 0; top: 0; width: 50%; @include Transform(rotateY(0deg)); @include TransformOrigin(left center); @include Transition($timing:.5s); }
+	
+	@include breakpoint(medium) { height: calc(100vh - 50px); width: calc(100vw - 50px); }
 	
 	&_Closed { 
 		&:before { @include Transform(rotateY(90deg)); }
@@ -13,12 +20,31 @@
 	&Inner { height: 100%; opacity: 1; position: relative; z-index: 1; @include Transition($timing:.2s); @include FlexBox($direction:column);
 		&_Collapsed { opacity: 0; }
 	}
+	
+	//Header
 	&Header { border-bottom: 1px solid $NearWhite; flex-shrink: 0; @include FlexBox; 
-		h2 { margin: 0; padding: 1rem 2rem; }
-	}
-	&Tabs { text-align: center; 
-		a { display: inline-block; margin: 0 .5rem; padding: .5em; }
+		h2 { font-size: 2rem; margin: 0; padding: 1rem 2rem; }
 	}
 	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: bold; padding: 1rem; }
-	&Content { overflow: auto; padding: 2rem; }
+	
+	//Main
+	&Main { overflow: auto; 
+		@include breakpoint(medium) { @include FlexBox($alignItems:stretch); }
+	}
+	&Tabs { padding: 2rem; text-align: center; 
+		@include breakpoint(medium) { border-right: 1px solid $NearWhite; padding: 2rem 0; text-align: right; }
+	}
+	&Tab { display: inline-block; margin: 0 .5rem; padding: .5em; 
+		&_active { background: $NearWhite; }
+		
+		@include breakpoint(medium) { border-radius: .2em 0 0 .2em; display: block; font-size: .75em; margin: 0 0 0 1em; padding: .25em .5em; }
+	}
+	&Content { overflow: auto; padding: 2rem; @include FlexGrow(1); 
+		@include breakpoint(medium) { padding: 2rem; }
+	}
+	&Section { display: none; 
+		&_active { display: block; }
+		
+		@include breakpoint(medium) { margin-top: -.9em; }
+	}
 }

@@ -80,11 +80,11 @@ class Resume extends React.Component {
 						<h2>Resumé</h2>
 						<Link to="/" className="TR-ResumeClose" onClick={this.close.bind(this)}>&times;</Link>
 					</header>
-					<section className="TR-ResumeContent">
+					<section className="TR-ResumeMain">
 						<header className="TR-ResumeTabs">
 							<Tabs resume={this.props.resume.resume} />
 						</header>
-						<section className="TR-ResumeSection">
+						<section className="TR-ResumeContent">
 							<Sections tabs={this.props.resume.resume} />
 						</section>
 					</section>
