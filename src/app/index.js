@@ -4,6 +4,9 @@ import {render} from "react-dom";
 import { BrowserRouter as Router, Route, NavLink, Switch, browserHistory, IndexRoute } from 'react-router-dom';
 import {Provider} from "react-redux";
 
+//GSAP
+import {TweenMax, Power2, TimelineLite} from "gsap";
+
 //Modules
 import Main from "./components/Main";
 
