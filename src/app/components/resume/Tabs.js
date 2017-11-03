@@ -14,12 +14,13 @@ class Tabs extends React.Component {
 	
 	render() {
 		if (store.getState().resume.resume.length > 0) {
+			var tabRef = this.props.tabRef;
+
 			this.state.tabs = store.getState().resume.resume.map(function(item, i) {
 				
-				var activeClass = i == 0 ? "TR-ResumeTab_active" : "" ;
-				
+				var activeClass = i == 0 ? "TR-ResumeTab_active" : "";				
 				return (
-					<a href={"#resume-" + item.name} className={"TR-ResumeTab " + activeClass} key={i}>
+					<a href={"#resume-" + item.name} className={"TR-ResumeTab js-Tab " + activeClass} ref={tabRef} key={i}>
 						{item.name}
 					</a>
 				);

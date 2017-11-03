@@ -28,13 +28,13 @@
 	&Close { border-left: 1px solid $NearWhite; font-size: 3rem; font-weight: bold; padding: 1rem; }
 	
 	//Main
-	&Main { overflow: auto; 
+	&Main { overflow: auto; @include FlexGrow(1);
 		@include breakpoint(medium) { @include FlexBox($alignItems:stretch); }
 	}
 	&Tabs { padding: 2rem; text-align: center; 
 		@include breakpoint(medium) { border-right: 1px solid $NearWhite; padding: 2rem 0; text-align: right; }
 	}
-	&Tab { display: inline-block; margin: 0 .5rem; padding: .5em; 
+	&Tab { cursor: pointer; display: inline-block; margin: 0 .5rem; padding: .5em; 
 		&_active { background: $NearWhite; }
 		
 		@include breakpoint(medium) { border-radius: .2em 0 0 .2em; display: block; font-size: .75em; margin: 0 0 0 1em; padding: .25em .5em; }

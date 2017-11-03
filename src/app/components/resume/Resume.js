@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 import Tabs from "./Tabs";
 import Sections from "./Sections";
+import TabSwitcher from "../../utility/tabSwitcher";
 
 import { getResume } from "../../actions/resumeActions";
 
@@ -18,6 +19,9 @@ class Resume extends React.Component {
 			closedClass: "",
 			collapsedClass: ""
 		};
+		this.tabs = [];
+		this.sections = [];
+		
 		props.getResume();
 
 		if(typeof props.location.state !== "undefined") {
@@ -72,6 +76,16 @@ class Resume extends React.Component {
 		}
 	}
 	
+	pushTabs = ref => {
+		console.log(ref);
+		this.tabSet.addTab(ref);
+	}
+	
+	pushSections = ref => {
+		console.log(ref);
+		this.tabSet.addSection(ref);
+	}
+	
 	render() {
 		return (
 			<section className={"TR-Resume " + this.state.closedClass} ref="resume">
@@ -80,12 +94,12 @@ class Resume extends React.Component {
 						<h2>Resumé</h2>
 						<Link to="/" className="TR-ResumeClose" onClick={this.close.bind(this)}>&times;</Link>
 					</header>
-					<section className="TR-ResumeMain">
+					<section className="TR-ResumeMain js-ResumeTabs" ref="resumeTabs">
 						<header className="TR-ResumeTabs">
-							<Tabs resume={this.props.resume.resume} />
+							<Tabs className="js-Tabs" resume={this.props.resume.resume} tabRef={this.pushTabs} />
 						</header>
 						<section className="TR-ResumeContent">
-							<Sections tabs={this.props.resume.resume} />
+							<Sections tabs={this.props.resume.resume} sectionRef={this.pushSections} />
 						</section>
 					</section>
 				</div>
@@ -99,9 +113,10 @@ class Resume extends React.Component {
 			if(getComputedStyle(el).opacity == 1) {
 				
 			}
-		});
-		
+		});		
 		this.open();
+				
+		this.tabSet = new TabSwitcher(this.refs.resumeTabs,this.tabs,this.sections);
 	}
 }
 

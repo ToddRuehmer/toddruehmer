@@ -14,20 +14,20 @@ class Sections extends React.Component {
 	
 	render() {
 		if (store.getState().resume.resume.length > 0) {
+			var sectionRef = this.props.sectionRef;
 			this.state.sections = store.getState().resume.resume.map(function(item, i) {
 				if (Array.isArray(item.content)) {
 					var content = item.content.map(function(work, i) {
-						console.log(work);
 						var projects = work.projects.map(function(project, i) {
 							if (i == 0) {
 								return (
-									<span className="TR-Resume-Project">
+									<span className="TR-Resume-Project" key={i}>
 										<a href={project.link} key={i}>{project.title}</a> 
 									</span>
 								);
 							} else {
 								return (
-									<span className="TR-Resume-Project">
+									<span className="TR-Resume-Project" key={i}>
 										, <a href={project.link} key={i}>{project.title}</a> 
 									</span>
 								)
@@ -46,17 +46,17 @@ class Sections extends React.Component {
 					var content = item.content;
 				}
 				
-				var activeClass = i == 0 ? "TR-ResumeSection_active" : "" ;
+				var activeClass = i == 0 ? "TR-ResumeSection_active" : "";
 				
 				if (Array.isArray(content)) {
 					return (
-						<article id={"resume-" + item.name} className={"TR-ResumeSection " + activeClass} key={i}>
+						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={sectionRef} key={i}>
 							{content}
 						</article>
 					);
 				} else {
 					return (
-						<article id={"resume-" + item.name} className={"TR-ResumeSection " + activeClass} dangerouslySetInnerHTML={{__html: content}} key={i}></article>
+						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={sectionRef} dangerouslySetInnerHTML={{__html: content}} key={i}></article>
 					);
 				}
 			});
