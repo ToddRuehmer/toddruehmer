@@ -30,7 +30,9 @@ class Tab {
 		
 		tab.el		= el;
 		tab.index	= i;
+		tab.active	= tab.index == 0;
 		
+		console.log(this.el, 'el');
 		this.el.addEventListener("click", function(e) {
 			e.preventDefault();
 			
@@ -38,6 +40,7 @@ class Tab {
 			if(switcher.active != switcher.next){
 				var tl = new TimelineMax();
 				
+				console.log(switcher.tabs[switcher.active].el.active);
 				tl.to(switcher.sections[switcher.active].el, 0.5, {y: 50, opacity: 0})
 				.to(switcher.sections[switcher.active].el, 0, {display: 'none'});
 				

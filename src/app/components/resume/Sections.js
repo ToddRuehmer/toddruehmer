@@ -1,4 +1,5 @@
 import React from "react";
+import { Provider, connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import store from "../../Store";
@@ -12,7 +13,13 @@ class Sections extends React.Component {
 	    }
 	}
 	
+	pushSection = ref => {
+		this.props.resume.tabSet.addSection(ref);
+	}
+	
 	render() {
+		var pushSection = this.pushSection;
+		
 		if (store.getState().resume.resume.length > 0) {
 			var sectionRef = this.props.sectionRef;
 			this.state.sections = store.getState().resume.resume.map(function(item, i) {
@@ -50,13 +57,13 @@ class Sections extends React.Component {
 				
 				if (Array.isArray(content)) {
 					return (
-						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={sectionRef} key={i}>
+						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={pushSection} key={i}>
 							{content}
 						</article>
 					);
 				} else {
 					return (
-						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={sectionRef} dangerouslySetInnerHTML={{__html: content}} key={i}></article>
+						<article id={"resume-" + item.name} className={"TR-ResumeSection js-TabSection " + activeClass} ref={pushSection} dangerouslySetInnerHTML={{__html: content}} key={i}></article>
 					);
 				}
 			});
@@ -69,4 +76,18 @@ class Sections extends React.Component {
 	}
 }
 
-export default Sections;
+const mapStateToProps = (state) => {
+	return {
+		resume: state.resume
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getResume: () => {
+			dispatch(getResume())
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sections);

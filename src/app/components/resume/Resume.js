@@ -76,14 +76,8 @@ class Resume extends React.Component {
 		}
 	}
 	
-	pushTabs = ref => {
-		console.log(ref);
-		this.tabSet.addTab(ref);
-	}
-	
-	pushSections = ref => {
-		console.log(ref);
-		this.tabSet.addSection(ref);
+	pushSection = ref => {
+		this.props.resume.tabSet.addSection(ref);
 	}
 	
 	render() {
@@ -96,10 +90,10 @@ class Resume extends React.Component {
 					</header>
 					<section className="TR-ResumeMain js-ResumeTabs" ref="resumeTabs">
 						<header className="TR-ResumeTabs">
-							<Tabs className="js-Tabs" resume={this.props.resume.resume} tabRef={this.pushTabs} />
+							<Tabs className="js-Tabs" tabRef={this.pushTabs} />
 						</header>
 						<section className="TR-ResumeContent">
-							<Sections tabs={this.props.resume.resume} sectionRef={this.pushSections} />
+							<Sections tabs={this.props.resume.resume} sectionRef={this.pushSection} />
 						</section>
 					</section>
 				</div>
@@ -116,7 +110,7 @@ class Resume extends React.Component {
 		});		
 		this.open();
 				
-		this.tabSet = new TabSwitcher(this.refs.resumeTabs,this.tabs,this.sections);
+		this.props.resume.tabSet = new TabSwitcher(this.refs.resumeTabs,this.tabs,this.sections);
 	}
 }
 
