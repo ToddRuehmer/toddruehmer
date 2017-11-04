@@ -17,11 +17,16 @@ class Tabs extends React.Component {
 		this.props.resume.tabSet.addTab(ref);
 	}
 	
+	isActive (tabSet, i) {
+		//return item.isActive ? "TR-ResumeTab_active" : "work";
+	}
+	
 	render() {
 		if (store.getState().resume.resume.length > 0) {
 			var tabRef = this.props.tabRef,
 				tabSet = this.props.resume.tabSet,
-				pushTab = this.pushTab;
+				pushTab = this.pushTab,
+				isActive = this.isActive;
 
 			this.state.tabs = store.getState().resume.resume.map(function(item, i) {
 				return (
