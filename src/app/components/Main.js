@@ -9,6 +9,14 @@ import Summary from "./Summary";
 import Loader from "./Loader";
 import Resume from "./resume/Resume";
 
+class NotFound extends React.Component {
+	render() {
+		return(
+			<div>null</div>
+		)
+	}
+}
+
 class Main extends React.Component {
 	constructor(props) {
 		super();

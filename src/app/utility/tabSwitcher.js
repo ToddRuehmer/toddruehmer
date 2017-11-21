@@ -20,11 +20,13 @@ class TabSwitcher {
 		}
 		this.tabs.push(new Tab(this, el, this.tabs.length) );
 	}
+	
 	// Add new section to switcher (called externally)
 	addSection(el) {
 		this.sections.push(new Section(this, el, this.sections.length) );
 	}
 	
+	// Handle switching changes and animations
 	switchTab () {
 		if(this.active != this.next){
 			var tl = new TimelineMax(),
@@ -58,12 +60,14 @@ class Tab {
 		tab.index		= i;
 		tab.isActive	= tab.index == 0;
 		
-		this.el.addEventListener("click", function(e) {
-			e.preventDefault();
-			
-			switcher.next = tab.index;
-			switcher.switchTab();
-		});
+		if (this.el != null) {
+			this.el.addEventListener("click", function(e) {
+				e.preventDefault();
+				
+				switcher.next = tab.index;
+				switcher.switchTab();
+			});
+		}
 	}
 }
 

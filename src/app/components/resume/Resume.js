@@ -29,55 +29,18 @@ class Resume extends React.Component {
 		}
 	}
 	
-	hide() {
-		this.collapseContent();
-		this.foldUp();
-	}
-	
 	close(e) {
 		if (e) { e.preventDefault(); }
 		
-		Promise.delay(this.collapseContent.bind(this), 1).delay(this.foldUp.bind(this), 200).delay(this.goBack.bind(this), 500);
-	}
-	
-	open(e) {
-		if (e) { e.preventDefault(); }
-		
-		Promise.delay(this.unFold.bind(this), 1).delay(this.expandContent.bind(this), 500)
-	}
-	
-	goBack() {
-		this.props.history.goBack();
-	}
-	
-	foldUp() {
-		this.setState({ closedClass: "TR-Resume_Closed" });
-	}
-	
-	unFold() {
-		this.setState({ closedClass: "" });
-	}
-	
-	collapseContent() {
-		this.setState({ collapsedClass: "TR-ResumeInner_Collapsed" });
-	}
-	
-	expandContent() {
-		this.setState({ collapsedClass: "" });
-	}
-	
-	revealContent() {
-		//this.setState({ closedClass: "" });
-	}
-	
-	componentWillMount() {
-		if(this.state.reveal) {
-			this.hide();
-		}
+		this.props.history.goBack("/");
 	}
 	
 	pushSection = ref => {
 		this.props.resume.tabSet.addSection(ref);
+	}
+	
+	componentWillMount() {
+		this.props.resume.tabSet = new TabSwitcher(this.refs.resumeTabs,this.tabs,this.sections);
 	}
 	
 	render() {
@@ -99,18 +62,6 @@ class Resume extends React.Component {
 				</div>
 			</section>
 		)
-	}
-	
-	componentDidMount() {
-		$('.TR-ResumeInner').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd', function(e) {
-			let el = this;
-			if(getComputedStyle(el).opacity == 1) {
-				
-			}
-		});		
-		this.open();
-				
-		this.props.resume.tabSet = new TabSwitcher(this.refs.resumeTabs,this.tabs,this.sections);
 	}
 }
 

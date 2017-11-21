@@ -14,7 +14,9 @@ class Sections extends React.Component {
 	}
 	
 	pushSection = ref => {
-		this.props.resume.tabSet.addSection(ref);
+		if(typeof this.props.resume.tabSet.addSection !== "undefined") {
+			this.props.resume.tabSet.addSection(ref);
+		}
 	}
 	
 	render() {

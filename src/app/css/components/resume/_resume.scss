@@ -16,6 +16,9 @@
 		&:before { @include Transform(rotateY(90deg)); }
 		&:after { @include Transform(rotateY(-90deg)); }
 	}
+	&_Hidden { 
+		display: none;
+	}
 	
 	&Inner { height: 100%; opacity: 1; position: relative; z-index: 1; @include Transition($timing:.2s); @include FlexBox($direction:column);
 		&_Collapsed { opacity: 0; }

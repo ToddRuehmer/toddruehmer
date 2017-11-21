@@ -14,11 +14,13 @@ class Tabs extends React.Component {
 	}
 	
 	pushTab = ref => {
-		this.props.resume.tabSet.addTab(ref);
+		if (typeof this.props.resume.tabSet.addTab !== "undefined") {
+			this.props.resume.tabSet.addTab(ref);
+		}
 	}
 	
 	isActive (tabSet, i) {
-		//return item.isActive ? "TR-ResumeTab_active" : "work";
+		return item.isActive ? "TR-ResumeTab_active" : "";
 	}
 	
 	render() {
