@@ -1,6 +1,7 @@
 import React from "react";
 import { Provider, connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import TransitionGroup from 'react-transition-group/TransitionGroup'
 import $ from 'jquery';
 
 import Tabs from "./Tabs";
@@ -29,10 +30,15 @@ class Resume extends React.Component {
 		}
 	}
 	
+	removeEl() {
+		this.props.history.goBack("/");
+	}
+	
 	close(e) {
 		if (e) { e.preventDefault(); }
 		
-		this.props.history.goBack("/");
+		var resume = this.refs.resume;
+		TweenMax.fromTo(resume, 1.5, {webkitClipPath: "inset(0 0% 0 0)"}, {webkitClipPath: "inset(0 100% 0 0)", ease: Power4.easeInOut, onComplete:this.removeEl.bind(this)});
 	}
 	
 	pushSection = ref => {
@@ -62,6 +68,13 @@ class Resume extends React.Component {
 				</div>
 			</section>
 		)
+	}
+	
+	componentDidMount() {
+		if(this.state.reveal) {
+			var resume = this.refs.resume;
+			TweenMax.fromTo(resume, 1.5, {webkitClipPath: "inset(0 0 0 100%)"}, {webkitClipPath: "inset(0 0 0 0%)", ease: Power4.easeInOut});
+		}
 	}
 }
 
